@@ -55,6 +55,14 @@ public class Interrupted {
                     LockSupport.park(this);
                     System.out.println("Park 线程被唤醒后！~");
 //                }
+
+                long i = 0;
+                while (true) {
+                    if (i % 1000000000 == 0) {
+                        System.out.println("Park 正在运行！~");
+                    }
+                    i++;
+                }
             } finally {
                 System.out.println("Park 线程停止！~");
             }
@@ -73,69 +81,45 @@ public class Interrupted {
 
     /*
 
-        运行结果1：
+        QA Park interrupted is true / false ?
 
-                Run 正在运行！~
-                Park 线程被唤醒后！~
-                Park 线程停止！~
-                Run interrupted is true
-                Park interrupted is true
-                Wait interrupted is false
-                这是 Wait 线程抛出的中断异常！~
-                Wait 线程停止！~
-                java.lang.InterruptedException: sleep interrupted
-                    at java.lang.Thread.sleep(Native Method)
-                    at java.lang.Thread.sleep(Thread.java:340)
-                    at java.util.concurrent.TimeUnit.sleep(TimeUnit.java:386)
-                    at com.github.hutu92.Interrupted$Wait.run(Interrupted.java:36)
-                    at java.lang.Thread.run(Thread.java:745)
-                Run 正在运行！~
-                Run 正在运行！~
-                Run 正在运行！~
-                Run 正在运行！~
+                如果将Park线程中的59～65行代码注掉，Park线程会因为中断跳出等待状态，然后执行完finally代码进而结束线程，
+                从而将中断标识位清除。
 
-        运行结果2：
-
-                Run 正在运行！~
-                java.lang.InterruptedException: sleep interrupted
-                    at java.lang.Thread.sleep(Native Method)
-                    at java.lang.Thread.sleep(Thread.java:340)
-                    at java.util.concurrent.TimeUnit.sleep(TimeUnit.java:386)
-                    at com.github.hutu92.Interrupted$Wait.run(Interrupted.java:36)
-                    at java.lang.Thread.run(Thread.java:745)
-                Park 线程被唤醒后！~
-                Park 线程停止！~
-                Run interrupted is true
-                Park interrupted is false
-                Wait interrupted is false
-                这是 Wait 线程抛出的中断异常！~
-                Wait 线程停止！~
-                Run 正在运行！~
-                Run 正在运行！~
-
-        TODO 1. Park interrupted is true / false ?
-        TODO 2. 如果去掉Park线程中while循环的注释，Park线程后续的LockSupport.park()将不会再等待（无效），将一直循环输出out ?
+                如果Park线程因为中断跳出等待状态，继续运行59～65行代码，现在永远不会结束，从而不会清除中断标记。
      */
 
     public static void main(String[] args) throws InterruptedException {
 
-        Thread run = new Thread(new Run());
-        Thread wait = new Thread(new Wait());
-        Thread park = new Thread(new Park());
+        int count = 0;
 
-        run.start();
-        wait.start();
-        park.start();
-        TimeUnit.SECONDS.sleep(2);
+        while (true) {
+            Thread run = new Thread(new Run());
+            Thread wait = new Thread(new Wait());
+            Thread park = new Thread(new Park());
 
-        run.interrupt();
-        wait.interrupt();
-        park.interrupt();
+            run.start();
+            wait.start();
+            park.start();
+            TimeUnit.SECONDS.sleep(2);
 
-        System.out.println("Run interrupted is " + run.isInterrupted());
-        System.out.println("Park interrupted is " + park.isInterrupted());
-        System.out.println("Wait interrupted is " + wait.isInterrupted());
+            run.interrupt();
+            wait.interrupt();
+            park.interrupt();
 
-        TimeUnit.SECONDS.sleep(Integer.MAX_VALUE);
+            boolean parkIsInterrupted = false;
+            System.out.println("Run interrupted is " + run.isInterrupted());
+            System.out.println("Park interrupted is " + (parkIsInterrupted = park.isInterrupted()));
+            System.out.println("Wait interrupted is " + wait.isInterrupted());
+
+            if (!parkIsInterrupted) {
+                System.out.println("出现预期结果！～");
+                System.exit(0);
+            }
+
+            count++;
+
+            System.out.println("第 " + count + " 次循环测试！～");
+        }
     }
 }
