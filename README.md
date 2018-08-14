@@ -6,8 +6,6 @@
 
 ## 文章列表
 
-### Java并发
-
 - [「Java并发」线程池技术及其示例](https://mp.weixin.qq.com/s/HRv0HLzDy_y3fFatcHiHvw)
 - [「Java并发」实现一个基于线程池技术的简单Web服务器](https://mp.weixin.qq.com/s/0-KPAvLmy27Z3nSF4s9fbw)
 - [Apache压力测试工具AB](https://mp.weixin.qq.com/s/6HC2YJ3853bqXI4QpCwJ-A)
@@ -17,3 +15,5 @@
 - [「Java并发」重入锁ReentrantLock](https://mp.weixin.qq.com/s?__biz=MzU4MDY3ODg3OA==&mid=2247483771&idx=1&sn=8bff5cf658fe1f596aa9289ed3d00d62&chksm=fd5264caca25eddc83e830a599aa143d39f4a67e179eb5be7f6218065081e6161db8a645786f#rd)
 - [「Java并发」读写锁ReentrantReadWriteLock](https://mp.weixin.qq.com/s?__biz=MzU4MDY3ODg3OA==&mid=2247483778&idx=1&sn=3d22d4fea2e98bf2ccb911a01014df7b&chksm=fd526433ca25ed25cbb0bb7c7cbc34aefa33cac6956c24f31cb4eb7b68fd3f27e074edc392c3#rd)
 - [「Java并发」Condition源码分析](https://mp.weixin.qq.com/s?__biz=MzU4MDY3ODg3OA==&mid=2247483787&idx=1&sn=8123804745152d396c4831ac39f4d159&chksm=fd52643aca25ed2cf4fd08ebc84a308d54179135442df05708ce8f833db81c2fbc0d424db3e7#rd)
+- [「Java并发」HashMap实现原理及源码分析（Java 1.7.0_80）](https://mp.weixin.qq.com/s?__biz=MzU4MDY3ODg3OA==&mid=2247483792&idx=1&sn=1c67798db49bf2f1d75864dc4083fce5&scene=19#wechat_redirect)
+- [「Java并发」ConcurrentHashMap的实现原理与使用](https://mp.weixin.qq.com/s?__biz=MzU4MDY3ODg3OA==&mid=2247483810&idx=1&sn=95d9ae729a898dc283911d3fad97c612&scene=19#wechat_redirect)
