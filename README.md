@@ -18,3 +18,5 @@
 - [「Java并发」HashMap实现原理及源码分析（Java 1.7.0_80）](https://mp.weixin.qq.com/s?__biz=MzU4MDY3ODg3OA==&mid=2247483792&idx=1&sn=1c67798db49bf2f1d75864dc4083fce5&scene=19#wechat_redirect)
 - [「Java并发」 HashMap实现原理及源码分析（Java 1.8.0_101）](https://mp.weixin.qq.com/s?__biz=MzU4MDY3ODg3OA==&mid=2247483820&idx=1&sn=06bfed9d66715abdf5024068c3890ea2&chksm=fd52641dca25ed0b0eac07e633c5c6136cfb98206eda6191918df151fd3387b89c5593151281#rd)
 - [「Java并发」ConcurrentHashMap的实现原理与使用](https://mp.weixin.qq.com/s?__biz=MzU4MDY3ODg3OA==&mid=2247483810&idx=1&sn=95d9ae729a898dc283911d3fad97c612&scene=19#wechat_redirect)
+- [「Java并发」Java中的阻塞队列](https://mp.weixin.qq.com/s?__biz=MzU4MDY3ODg3OA==&mid=2247483831&idx=1&sn=4f0f29d7ef057bfdd7322a1f7feb63ff&chksm=fd526406ca25ed1033b48682a76d770dd12ac796dbcba489f4901611cc43f8d0cd76674973b8&token=1487648090&lang=zh_CN#rd)
+- [「Java并发」Java中的阻塞队列之DelayQueue](https://mp.weixin.qq.com/s?__biz=MzU4MDY3ODg3OA==&mid=2247483831&idx=2&sn=15e209894853f4279d3b97dab1af7671&chksm=fd526406ca25ed109d0e39cac84e889aee411a6666e93181ac59b87cdc20d7af686b802f2942&token=1487648090&lang=zh_CN#rd)
