@@ -1,4 +1,4 @@
-package com.github.hutu92;
+package com.github.hutu92.code.analysis;
 
 /**
  * Created by 刘春龙 on 2018/8/10.

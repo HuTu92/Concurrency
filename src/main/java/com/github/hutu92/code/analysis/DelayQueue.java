@@ -1,4 +1,4 @@
-package com.github.hutu92;
+package com.github.hutu92.code.analysis;
 
 import java.util.PriorityQueue;
 import java.util.concurrent.locks.Condition;

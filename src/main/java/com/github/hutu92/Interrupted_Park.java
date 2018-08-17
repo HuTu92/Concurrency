@@ -6,7 +6,7 @@ import java.util.concurrent.locks.LockSupport;
 /**
  * Created by 刘春龙 on 2018/8/3.
  */
-public class Interrupted2 {
+public class Interrupted_Park {
 
     static class Wait implements Runnable {
 
@@ -73,7 +73,9 @@ public class Interrupted2 {
 
             这也是sleep和park的区别。
 
-            具体什么原因，得看park底层实现，姑且先记着有这一回事。
+            具体什么原因，得看park底层实现。
+
+            参见：https://mp.weixin.qq.com/s?__biz=MzU4MDY3ODg3OA==&mid=2247483752&idx=1&sn=ca0843e32b3223d7ac9422597b0ad9b8&chksm=fd5264d9ca25edcfb7bf7ecbecc2e198312535ea7ef1540e671d24508fa89143989c63490e25&token=1487648090&lang=zh_CN#rd
 
      */
 
