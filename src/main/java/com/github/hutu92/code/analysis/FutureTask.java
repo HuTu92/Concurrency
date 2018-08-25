@@ -36,11 +36,11 @@ public class FutureTask {
     private volatile int state;
     private static final int NEW = 0;
     private static final int COMPLETING = 1;
-    // case 1
+    // case 1 return value
     private static final int NORMAL = 2;
-    // case 2
+    // case 2 throw ExecutionException
     private static final int EXCEPTIONAL = 3;
-    // case 3
+    // case 3 throw CancellationException
     private static final int CANCELLED = 4;
     private static final int INTERRUPTING = 5;
     private static final int INTERRUPTED = 6;
